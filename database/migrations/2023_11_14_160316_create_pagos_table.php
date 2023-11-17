@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('pagos', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('solicitud')->unsigned();
-            $table->bigInteger('tecnico_id')->unsigned();
             $table->float('total');
             $table->timestamps();
         });

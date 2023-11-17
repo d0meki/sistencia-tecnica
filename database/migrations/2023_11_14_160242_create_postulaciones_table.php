@@ -17,6 +17,7 @@ return new class extends Migration
             $table->float('estimacion_costo');
             $table->integer('estado');
             $table->bigInteger('taller_id')->unsigned();
+            $table->bigInteger('tecnico_id')->unsigned();
             $table->bigInteger('solicitud_id')->unsigned();
             $table->timestamps();
         });
