@@ -12,7 +12,10 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('email', $request->email)
+                        ->with('roles')
+                        ->with('roles.role')
+                        ->first();
         if (!$user || !Hash::check($request->password, $user->password)) {
             return response()->json([
                 'success' => false,
