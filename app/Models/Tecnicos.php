@@ -15,4 +15,8 @@ class Tecnicos extends Model
         'longitud',
         'latitud',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

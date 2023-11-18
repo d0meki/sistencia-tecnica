@@ -10,7 +10,6 @@ class Pago extends Model
     use HasFactory;
     protected $table = 'pagos';
     protected $fillable = [
-        'tecnico_id',
         'solicitud_id',
         'total',
     ];

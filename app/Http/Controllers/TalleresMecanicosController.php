@@ -21,4 +21,11 @@ class TalleresMecanicosController extends Controller
             'message' => 'Registro exitoso',
         ], 200);
     }
+    public function getMyTallerMecanico($id){
+        $taller = TalleresMecanicos::where('user_id', $id)->first();
+        return response()->json([
+            'success' => true,
+            'data' => $taller,
+        ], 200);
+    }
 }

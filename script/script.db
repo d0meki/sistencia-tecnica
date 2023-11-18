@@ -1,0 +1,6 @@
+--update un registro
+update usuario_roles SET rol_id = 4 where usuario_roles.id = 1;
+-- all usuario_roles
+select*from usuario_roles
+-- all roles
+select*from roles

@@ -32,4 +32,5 @@ Route::post('/register-taller-mecanico', [TalleresMecanicosController::class, 'r
 Route::post('/register-tecnico', [TecnicosController::class, 'addTecnicoTaller']);
 Route::get('/get-tecnicos/{id}', [TecnicosController::class, 'getTecnicosByTaller']);
 Route::get('/get-my-vehiculos/{id}', [VehiculoController::class, 'getVehiculosByid']);
+Route::get('/get-my-taller/{id}', [TalleresMecanicosController::class, 'getMyTallerMecanico']);
 
