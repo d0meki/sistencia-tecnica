@@ -30,6 +30,7 @@ Route::post('/asignar-role', [AuthController::class, 'asignarRol']);
 Route::post('/register-vehiculo', [VehiculoController::class, 'registrarVehiculo']);
 Route::post('/register-taller-mecanico', [TalleresMecanicosController::class, 'registrarTallerMecanico']);
 Route::post('/register-tecnico', [TecnicosController::class, 'addTecnicoTaller']);
+Route::post('/register-usuario-taller', [TalleresMecanicosController::class, 'registrarUsuarioTaller']);
 Route::get('/get-tecnicos/{id}', [TecnicosController::class, 'getTecnicosByTaller']);
 Route::get('/get-my-vehiculos/{id}', [VehiculoController::class, 'getVehiculosByid']);
 Route::get('/get-my-taller/{id}', [TalleresMecanicosController::class, 'getMyTallerMecanico']);

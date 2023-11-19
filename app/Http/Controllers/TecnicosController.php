@@ -30,7 +30,7 @@ class TecnicosController extends Controller
             ]);
             UsuarioRole::create([
                 'user_id' => $nuevo_usuario->id,
-                'rol_id' => 3
+                'rol_id' => 4
             ]);
             DB::commit();
             return response()->json([
