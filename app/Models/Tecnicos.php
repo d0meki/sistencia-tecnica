@@ -10,7 +10,7 @@ class Tecnicos extends Model
     use HasFactory;
     protected $table = 'tecnicos';
     protected $fillable = [
-        'taller_id',
+        'talleres_mecanicos_id',
         'user_id',
         'longitud',
         'latitud',

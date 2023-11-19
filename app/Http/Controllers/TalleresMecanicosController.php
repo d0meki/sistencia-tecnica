@@ -22,7 +22,10 @@ class TalleresMecanicosController extends Controller
         ], 200);
     }
     public function getMyTallerMecanico($id){
-        $taller = TalleresMecanicos::where('user_id', $id)->first();
+        $taller = TalleresMecanicos::where('user_id', $id)
+                                   ->with('tecnicos')
+                                   ->with('tecnicos.user')
+                                   ->first();
         return response()->json([
             'success' => true,
             'data' => $taller,

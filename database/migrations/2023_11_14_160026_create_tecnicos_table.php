@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('tecnicos', function (Blueprint $table) {
             $table->id();
-            $table->double('latitud');
-            $table->double('longitud');
+            $table->double('latitud')->nullable();
+            $table->double('longitud')->nullable();
             $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('taller_id')->unsigned();
+            $table->bigInteger('talleres_mecanicos_id')->unsigned();
             $table->timestamps();
         });
     }

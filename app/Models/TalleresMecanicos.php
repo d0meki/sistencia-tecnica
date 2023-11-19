@@ -21,4 +21,8 @@ class TalleresMecanicos extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function tecnicos()
+    {
+        return $this->hasMany(Tecnicos::class);
+    }
 }

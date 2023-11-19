@@ -19,7 +19,6 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
         'email',
         'nombre',
         'apellido',
@@ -27,6 +26,7 @@ class User extends Authenticatable
         'direccion',
         'telefono',
         'avatar',
+        'password',
     ];
     public function roles(): HasMany
     {

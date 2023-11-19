@@ -4,3 +4,9 @@ update usuario_roles SET rol_id = 4 where usuario_roles.id = 1;
 select*from usuario_roles
 -- all roles
 select*from roles
+-- add taller
+INSERT INTO talleres_mecanicos (nombre, nit, direccion, telefono,user_id) VALUES ('DONESCO SRL','854362591', 'Calle san adnres','78541265',1);
+-- all talleres_mecanicos
+select*from talleres_mecanicos;
+--elimina un registro con id especifico
+delete from talleres_mecanicos where id = 1;
