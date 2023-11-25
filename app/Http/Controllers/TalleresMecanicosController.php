@@ -6,6 +6,7 @@ use App\Models\TalleresMecanicos;
 use App\Models\User;
 use App\Models\UsuarioRole;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -63,5 +64,24 @@ class TalleresMecanicosController extends Controller
                 'message' => $th->getMessage(),
             ], 400);
         }
+    }
+
+    //=================WEB==================
+    public function createTaller(){
+        return view('taller.create_taller');
+    }
+    public function registrarTaller(Request $request){
+        TalleresMecanicos::create([
+            'nombre' => $request->nombre,
+            'direccion' => $request->direccion,
+            'nit' => $request->nit,
+            'telefono' => $request->telefono,
+            'foto' => null,
+            'user_id' => Auth::id(),
+        ]);
+        return redirect()->route('home');
+    }
+    public function storeTaller(Request $request){
+
     }
 }
