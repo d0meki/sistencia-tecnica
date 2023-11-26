@@ -13,6 +13,7 @@ class Tecnicos extends Model
         'talleres_mecanicos_id',
         'user_id',
         'longitud',
+        'estado',
         'latitud',
     ];
     public function user()

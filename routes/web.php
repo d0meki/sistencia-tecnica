@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostulacionesController;
+use App\Http\Controllers\SolicitudesController;
 use App\Http\Controllers\SuscripcionesController;
 use App\Http\Controllers\TalleresMecanicosController;
 use App\Http\Controllers\TecnicosController;
@@ -40,3 +42,7 @@ Route::get('/ver-mapa/{id}', [TecnicosController::class, 'verTecnicoEnElMapa'])-
 Route::get('/tecnicos-edit/{id}', [TecnicosController::class, 'edit'])->name('tecnicos.edit');
 Route::post('/tecnicos-store-lat-lng', [TecnicosController::class, 'storeLatLng'])->name('tecnicos.store_lat_lng');
 Route::get('/all-tecnicos-mapa', [TecnicosController::class, 'allTecnicosMap'])->name('tecnicos.all_tecnicos_map');
+Route::get('/solicitudes', [SolicitudesController::class, 'index'])->name('solicitudes.index');
+Route::get('/solicitudes/{id}', [SolicitudesController::class, 'show'])->name('solicitudes.show');
+Route::get('/postular/{id}', [PostulacionesController::class, 'postuacion'])->name('postulacion.create');
+Route::post('/postular', [PostulacionesController::class, 'postular'])->name('postulacion.store');

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('postulaciones', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('estimacion_llegada');
+            $table->time('estimacion_llegada');
             $table->float('estimacion_costo');
             $table->integer('estado');
             $table->bigInteger('taller_id')->unsigned();

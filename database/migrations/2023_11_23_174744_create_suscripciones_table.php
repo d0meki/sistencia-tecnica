@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('membresia');
             $table->float('total');
+            $table->date('fecha_inicio');
+            $table->date('fecha_fin');
             $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
         });

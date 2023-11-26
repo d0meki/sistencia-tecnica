@@ -13,6 +13,8 @@ class Suscripciones extends Model
         'membresia',
         'user_id',
         'total',
+        'fecha_inicio',
+        'fecha_fin',
     ];
     public function user()
     {

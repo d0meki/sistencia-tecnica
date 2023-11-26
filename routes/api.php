@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SolicitudesController;
 use App\Http\Controllers\TalleresMecanicosController;
 use App\Http\Controllers\TecnicosController;
 use App\Http\Controllers\VehiculoController;
@@ -34,4 +35,7 @@ Route::post('/register-usuario-taller', [TalleresMecanicosController::class, 're
 Route::get('/get-tecnicos/{id}', [TecnicosController::class, 'getTecnicosByTaller']);
 Route::get('/get-my-vehiculos/{id}', [VehiculoController::class, 'getVehiculosByid']);
 Route::get('/get-my-taller/{id}', [TalleresMecanicosController::class, 'getMyTallerMecanico']);
+
+Route::post('/solicitar', [SolicitudesController::class, 'nuevaSolicitud']);
+Route::get('/tarea/{id}', [TecnicosController::class, 'tareaTecnico']);
 

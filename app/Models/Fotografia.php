@@ -10,7 +10,7 @@ class Fotografia extends Model
     use HasFactory;
     protected $table = 'fotografias';
     protected $fillable = [
-        'path',
+        'foto',
         'solicitud_id',
     ];
 }
