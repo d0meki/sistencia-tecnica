@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('solicitudes', function (Blueprint $table) {
             $table->id();
             $table->date('fecha');
-            $table->dateTime('hora');
+            $table->time('hora');
             $table->string('nota_audio');
             $table->double('latitud');
             $table->double('longitud');

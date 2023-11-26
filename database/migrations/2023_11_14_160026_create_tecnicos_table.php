@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->double('latitud')->nullable();
             $table->double('longitud')->nullable();
+            $table->integer('estado');
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('talleres_mecanicos_id')->unsigned();
             $table->timestamps();

@@ -7,15 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
 
-    <!--     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"> -->
-
     <link href="{!! asset('css/bootstrap.min.css') !!}" rel="stylesheet">
     <link href="{!! asset('font-awesome/css/font-awesome.css') !!}" rel="stylesheet">
     <link href="{!! asset('css/plugins/iCheck/custom.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/plugins/slick/slick.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/plugins/slick/slick-theme.css') !!}" rel="stylesheet">
     <link href="{!! asset('css/animate.css') !!}" rel="stylesheet">
     <link href="{!! asset('css/style.css') !!}" rel="stylesheet">
 
@@ -66,7 +62,7 @@
                         <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Tecnicos</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="{{route('tecnicos.index')}}">Lista de Tecnicos</a></li>
-                           <!--  <li><a href="graph_morris.html">Morris.js Charts</a></li>
+                            <!--  <li><a href="graph_morris.html">Morris.js Charts</a></li>
                             <li><a href="graph_rickshaw.html">Rickshaw Charts</a></li>
                             <li><a href="graph_chartjs.html">Chart.js</a></li>
                             <li><a href="graph_chartist.html">Chartist</a></li>
@@ -77,12 +73,12 @@
                     </li>
 
                     <li>
-                        <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">Mis Tareas </span><span class="label label-warning float-right">16/24</span></a>
+                        <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">Soliciutudes </span><span class="label label-warning float-right">16/24</span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="mailbox.html">Inbox</a></li>
-                            <li><a href="mail_detail.html">Email view</a></li>
+                            <li><a href="{{route('solicitudes.index')}}">Index</a></li>
+                            <!--     <li><a href="mail_detail.html">Email view</a></li>
                             <li><a href="mail_compose.html">Compose email</a></li>
-                            <li><a href="email_template.html">Email templates</a></li>
+                            <li><a href="email_template.html">Email templates</a></li> -->
                         </ul>
                     </li>
 
@@ -437,35 +433,32 @@
     <!-- Mainly scripts -->
     @yield('script')
 
-    <!-- {!! asset('css/estilos.css') !!} -->
 
-    <!-- <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script> -->
-
-    <script src="{!! asset('js/jquery-3.1.1.min.js') !!}" ></script>
-    <script src="{!! asset('js/popper.min.js') !!}" ></script>
-    <script src="{!! asset('js/bootstrap.js') !!}" ></script>
-    <script src="{!! asset('js/plugins/metisMenu/jquery.metisMenu.js') !!}" ></script>
+    <script src="{!! asset('js/jquery-3.1.1.min.js') !!}"></script>
+    <script src="{!! asset('js/popper.min.js') !!}"></script>
+    <script src="{!! asset('js/bootstrap.js') !!}"></script>
+    <script src="{!! asset('js/plugins/metisMenu/jquery.metisMenu.js') !!}"></script>
     <script src="{!! asset('js/plugins/slimscroll/jquery.slimscroll.min.js') !!}"></script>
 
     <!-- Custom and plugin javascript -->
-  <!--   <script src="js/inspinia.js"></script>
+    <!--   <script src="js/inspinia.js"></script>
     <script src="js/plugins/pace/pace.min.js"></script> -->
     <script src="{!! asset('js/inspinia.js') !!}"></script>
     <script src="{!! asset('js/plugins/pace/pace.min.js') !!}"></script>
     <!-- iCheck -->
     <!-- <script src="js/plugins/iCheck/icheck.min.js"></script> -->
     <script src="{!! asset('js/plugins/iCheck/icheck.min.js') !!}"></script>
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIvLGoyfpUOyGllnoOJIGIW5WEkQk8S14"></script> -->
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQTpXj82d8UpCi97wzo_nKXL7nYrd4G70"></script> -->
+    <script src="{!! asset('js/plugins/slick/slick.min.js') !!}"></script>
+
     <script>
         $(document).ready(function() {
             $('.i-checks').iCheck({
                 checkboxClass: 'icheckbox_square-green',
                 radioClass: 'iradio_square-green',
+            });
+            console.log('se esta ejecuntado!!');
+            $('.slick_demo_1').slick({
+                dots: true
             });
         });
     </script>

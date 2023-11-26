@@ -89,15 +89,19 @@ class SuscripcionesController extends Controller
     }
     public function pagar($total)
     {
+
         switch ($total) {
             case '9.99':
                 $membresia = "1 Mes";
+                $fecha_fin = date('Y-m-d', strtotime('+30 days'));
                 break;
             case '19.99':
                 $membresia = "3 Meses";
+                $fecha_fin = date('Y-m-d', strtotime('+90 days'));
                 break;
             case '59.99':
                 $membresia = "1 año";
+                $fecha_fin = date('Y-m-d', strtotime('+365 days'));
                 break;
             default:
                 $membresia = "0 Dias";
@@ -107,6 +111,8 @@ class SuscripcionesController extends Controller
             'membresia' => $membresia,
             'total' => $total,
             'user_id' => Auth::id(),
+            'fecha_inicio' => date('Y-m-d'),
+            'fecha_fin' => $fecha_fin,
         ]);
         UsuarioRole::create([
             'user_id' => Auth::id(),
