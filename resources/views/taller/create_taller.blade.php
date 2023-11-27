@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="ibox-content">
-                        <form action="{{route('taller.store')}}" method="POST">
+                        <form action="{{route('taller.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group  row"><label class="col-sm-2 col-form-label">Nombre</label>
                                 <div class="col-sm-10"><input type="text" name="nombre" class="form-control"></div>
@@ -45,6 +45,13 @@
                                 <div class="col-sm-10"><input type="text" name="telefono" class="form-control"></div>
                             </div>
                             <div class="hr-line-dashed"></div>
+                            <div class="btn-group">
+                                <label title="Upload image file" for="inputImage" class="btn btn-primary">
+                                    <input type="file" accept="image/*" name="imagen" id="inputImage" class="hide">
+                                    Upload new image
+                                </label>
+                                <label title="Donload image" id="download" class="btn btn-primary">Download</label>
+                            </div>
                             <div class="text-center">
                                 <button class="btn btn-white btn-sm" type="button">Cancel</button>
                                 <button class="btn btn-primary btn-sm" type="submit">Save changes</button>
