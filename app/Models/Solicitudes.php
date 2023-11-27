@@ -24,6 +24,6 @@ class Solicitudes extends Model
     }
     public function fotografias()
     {
-        return $this->hasMany(fotografia::class, 'solicitud_id');
+        return $this->hasMany(Fotografia::class, 'solicitud_id');
     }
 }
