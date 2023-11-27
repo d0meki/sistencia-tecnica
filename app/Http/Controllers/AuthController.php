@@ -31,7 +31,7 @@ class AuthController extends Controller
     }
     public function registrarUsuario(Request $request)
     {
-        User::create([
+        $nuevo_usuario = User::create([
             'nombre' => $request->nombre,
             'apellido' => $request->apellido,
             'ci' => $request->ci,
@@ -39,6 +39,10 @@ class AuthController extends Controller
             'telefono' => $request->telefono,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+        ]);
+        UsuarioRole::create([
+            'user_id' => $nuevo_usuario->id,
+            'rol_id' => 2
         ]);
         return response()->json([
             'success' => true,
