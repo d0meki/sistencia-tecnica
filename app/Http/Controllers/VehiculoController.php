@@ -25,7 +25,7 @@ class VehiculoController extends Controller
         ], 200);
     }
     public function getVehiculosByid($id){
-        $vehiculos = Vehiculo::where('usuario_id', $id)->get();
+        $vehiculos = Vehiculo::where('user_id', $id)->get();
         return response()->json([
             'success' => true,
             'data' => $vehiculos,

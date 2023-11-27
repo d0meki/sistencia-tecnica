@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fotografia;
+use App\Models\Postulaciones;
 use App\Models\Solicitudes;
 use App\Models\TalleresMecanicos;
 use App\Models\Tecnicos;
@@ -44,6 +45,22 @@ class SolicitudesController extends Controller
         ], 200);
         return redirect()->route('solicitudes.index');
     }
+    public function terminarSolicitud(Request $request)
+    {
+        $solicitud = Solicitudes::find($request->solicitud_id);
+        $solicitud->estado = 2; //terminado
+        $solicitud->save();
+        $tecnico = Tecnicos::find($request->tecnico_id);
+        $tecnico->estado = 0; //disponible
+        $tecnico->save();
+        $postulacion = Postulaciones::find($request->postulacion_id);
+        $postulacion->estado = 3; //terminado
+        $postulacion->save();
+        return response()->json([
+            'success' => true,
+            'msg' => "Solicitud terminada, el tecnico se pondra disponible, Postulacion terminada"
+        ], 200);
+    }
 
 
 
@@ -70,19 +87,19 @@ class SolicitudesController extends Controller
     public function index()
     {
         $solicitudes = Solicitudes::where('estado', 0)
-                            ->with('user')
-                            ->get();
+            ->with('user')
+            ->get();
         return view('solicitudes.index', compact('solicitudes'));
     }
 
-    public function show($id){
-        $taller = TalleresMecanicos::where('user_id',Auth::id())->first();
+    public function show($id)
+    {
+        $taller = TalleresMecanicos::where('user_id', Auth::id())->first();
         $tecnicos = Tecnicos::where('talleres_mecanicos_id', $taller->id)
-                        ->with('user')
-                        ->get();
+            ->with('user')
+            ->get();
 
-        $solicitud = Solicitudes::where('id',$id)->with('user', 'fotografias')->first();
+        $solicitud = Solicitudes::where('id', $id)->with('user', 'fotografias')->first();
         return view('solicitudes.show', compact('solicitud', 'tecnicos'));
     }
-
 }
