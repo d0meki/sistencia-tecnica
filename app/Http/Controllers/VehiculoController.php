@@ -8,13 +8,16 @@ use Illuminate\Http\Request;
 class VehiculoController extends Controller
 {
     public function registrarVehiculo(Request $request){
+        $imagen = $request->file('foto');
+        $rutaImagen = $imagen->store('vehiculos', 'public');
         $vehiculo = Vehiculo::create([
             'placa' => $request->placa,
             'marca' => $request->marca,
             'modelo' => $request->modelo,
             'color' => $request->color,
             'tipo' => $request->tipo,
-            'usuario_id' => $request->usuario_id,
+            'foto' => $rutaImagen,
+            'user_id' => $request->user_id,
         ]);
         return response()->json([
             'success' => true,

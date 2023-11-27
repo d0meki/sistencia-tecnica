@@ -15,6 +15,6 @@ class Vehiculo extends Model
         'placa',
         'color',
         'foto',
-        'usuario_id',
+        'user_id',
     ];
 }

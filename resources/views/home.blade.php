@@ -11,7 +11,7 @@
                 </div>
                 <div>
                     <div class="ibox-content no-padding border-left-right">
-                        <img alt="image" class="img-fluid" src="img/profile_big.jpg">
+                        <img alt="image" class="img-fluid" src="{{ asset('storage/'.$taller->foto) }}">
                     </div>
                     <div class="ibox-content profile-content">
                         <h4><strong>{{$taller->nombre}}</strong></h4>

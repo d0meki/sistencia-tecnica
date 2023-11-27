@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Hash;
 
 class TalleresMecanicosController extends Controller
 {
-    public function registrarTallerMecanico(Request $request){
+    public function registrarTallerMecanico(Request $request)
+    {
         TalleresMecanicos::create([
             'nombre' => $request->nombre,
             'direccion' => $request->direccion,
@@ -26,17 +27,19 @@ class TalleresMecanicosController extends Controller
             'message' => 'Registro exitoso',
         ], 200);
     }
-    public function getMyTallerMecanico($id){
+    public function getMyTallerMecanico($id)
+    {
         $taller = TalleresMecanicos::where('user_id', $id)
-                                   ->with('tecnicos')
-                                   ->with('tecnicos.user')
-                                   ->first();
+            ->with('tecnicos')
+            ->with('tecnicos.user')
+            ->first();
         return response()->json([
             'success' => true,
             'data' => $taller,
         ], 200);
     }
-    public function registrarUsuarioTaller(Request $request){
+    public function registrarUsuarioTaller(Request $request)
+    {
         try {
             DB::beginTransaction();
             $nuevo_usuario = User::create([
@@ -67,21 +70,28 @@ class TalleresMecanicosController extends Controller
     }
 
     //=================WEB==================
-    public function createTaller(){
+    public function createTaller()
+    {
         return view('taller.create_taller');
     }
-    public function registrarTaller(Request $request){
-        TalleresMecanicos::create([
+    public function registrarTaller(Request $request)
+    {
+        $request->validate([
+            'imagen' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Ajusta las reglas de validación según tus necesidades
+        ]);
+        $imagen = $request->file('imagen');
+        $ruta = $imagen->store('imagenes', 'public');
+         TalleresMecanicos::create([
             'nombre' => $request->nombre,
             'direccion' => $request->direccion,
             'nit' => $request->nit,
             'telefono' => $request->telefono,
-            'foto' => null,
+            'foto' =>  $ruta,
             'user_id' => Auth::id(),
         ]);
         return redirect()->route('home');
     }
-    public function storeTaller(Request $request){
-
+    public function storeTaller(Request $request)
+    {
     }
 }
