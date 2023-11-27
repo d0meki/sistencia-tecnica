@@ -12,3 +12,5 @@ select*from talleres_mecanicos;
 delete from talleres_mecanicos where id = 1;
 --update latitud y longitud
 update tecnicos SET latitud = -17.812454, longitud = -63.183923 where tecnicos.id = 4;
+--update postulaciones
+update postulaciones SET estado = 1 where postulaciones.id = 1;
