@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
 use App\Models\UsuarioRole;
 use Illuminate\Http\Request;
@@ -146,4 +147,16 @@ class AuthController extends Controller
 
         return redirect('/');
     }
+
+    //======util===
+    public function allroles(){
+        $roles = Role::all();
+        return view('auth.allroles', compact('roles'));
+    }
+    public function allUsuarios(){
+        $usuarios = User::with('roles')->with('roles.role')->get();
+        // dd($usuarios);
+        return view('auth.allusuarios', compact('usuarios'));
+    }
+
 }

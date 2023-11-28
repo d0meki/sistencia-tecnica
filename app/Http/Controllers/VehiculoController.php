@@ -31,4 +31,10 @@ class VehiculoController extends Controller
             'data' => $vehiculos,
         ], 200);
     }
+
+    //===================utils
+    public function allVehiculos(){
+        $vehiculos = Vehiculo::all();
+        return view('vehiculos.index', compact('vehiculos'));
+    }
 }

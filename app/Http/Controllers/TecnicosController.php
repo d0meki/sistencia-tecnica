@@ -76,6 +76,15 @@ class TecnicosController extends Controller
             ], 200);
         }
     }
+    public function actualizarPosicion(Request $request){
+        $tecnico = Tecnicos::where('user_id', $request->id)->first();
+        $tecnico->latitud = $request->latitud;
+        $tecnico->longitud = $request->longitud;
+        $tecnico->save();
+        return response()->json([
+            'success' => true,
+        ], 200);
+    }
     //=============web========
     public function index()
     {

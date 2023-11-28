@@ -5,6 +5,7 @@ use App\Http\Controllers\SolicitudesController;
 use App\Http\Controllers\TalleresMecanicosController;
 use App\Http\Controllers\TecnicosController;
 use App\Http\Controllers\VehiculoController;
+use App\Models\Tecnicos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -39,3 +40,5 @@ Route::get('/get-my-taller/{id}', [TalleresMecanicosController::class, 'getMyTal
 Route::post('/solicitar', [SolicitudesController::class, 'nuevaSolicitud']);
 Route::get('/tarea/{id}', [TecnicosController::class, 'tareaTecnico']);
 
+Route::post('/terminar-solicitud', [SolicitudesController::class, 'terminarSolicitud']);
+Route::post('/actualizar-posicion', [TecnicosController::class, 'actualizarPosicion']);

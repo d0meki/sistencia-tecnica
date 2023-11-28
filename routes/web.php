@@ -7,6 +7,7 @@ use App\Http\Controllers\SolicitudesController;
 use App\Http\Controllers\SuscripcionesController;
 use App\Http\Controllers\TalleresMecanicosController;
 use App\Http\Controllers\TecnicosController;
+use App\Http\Controllers\VehiculoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,3 +47,10 @@ Route::get('/solicitudes', [SolicitudesController::class, 'index'])->name('solic
 Route::get('/solicitudes/{id}', [SolicitudesController::class, 'show'])->name('solicitudes.show');
 Route::get('/postular/{id}', [PostulacionesController::class, 'postuacion'])->name('postulacion.create');
 Route::post('/postular', [PostulacionesController::class, 'postular'])->name('postulacion.store');
+
+
+//RUTAS ALL
+
+Route::get('/roles', [AuthController::class, 'allroles'])->name('auth.roles');
+Route::get('/usuarios', [AuthController::class, 'allUsuarios'])->name('auth.usuarios');
+Route::get('/allvehiculos', [VehiculoController::class, 'allVehiculos'])->name('vehiculos.all');

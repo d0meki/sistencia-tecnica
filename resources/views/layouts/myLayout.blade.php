@@ -83,12 +83,12 @@
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">Mantenimiento de Datos
+                        <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">ACCESO TOTAL
                             </span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="#">Gestionar Funcionarios</a></li>
-                            <li><a href="profile.html">Gestionar Areas</a></li>
-                            <li><a href="profile.html">Gestionar Tipo de denuncia</a></li>
+                            <li><a href="{{route('auth.roles')}}">Roles</a></li>
+                            <li><a href="{{route('auth.usuarios')}}">Usuarios</a></li>
+                            <li><a href="{{route('vehiculos.all')}}">Vehiculos</a></li>
                             <li><a href="profile.html">Gestionar Estados</a></li>
 
                         </ul>
