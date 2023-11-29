@@ -78,11 +78,6 @@ class SolicitudesController extends Controller
 
 
 
-
-
-
-
-
     //==============web=================
     public function index()
     {

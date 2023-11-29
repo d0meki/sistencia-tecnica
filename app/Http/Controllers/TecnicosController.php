@@ -59,7 +59,8 @@ class TecnicosController extends Controller
     }
     public function tareaTecnico($id)
     {
-        $postulacion = Postulaciones::where('tecnico_id', $id)
+        $tecnico = Tecnicos::where('user_id',$id)->first();
+        $postulacion = Postulaciones::where('tecnico_id', $tecnico->id)
             ->where('estado', 1)
             ->with('solicitud')
             ->with('solicitud.user')
