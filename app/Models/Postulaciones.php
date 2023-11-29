@@ -24,4 +24,7 @@ class Postulaciones extends Model
     public function solicitud(){
         return $this->belongsTo(Solicitudes::class);
     }
+    public function taller(){
+        return $this->belongsTo(TalleresMecanicos::class);
+    }
 }

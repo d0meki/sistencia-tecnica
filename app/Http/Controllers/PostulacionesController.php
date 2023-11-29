@@ -24,7 +24,7 @@ class PostulacionesController extends Controller
         ], 200);
     }
     public function postulaciones(){
-        $postulaciones = Postulaciones::all();
+        $postulaciones = Postulaciones::with('taller')->get();
         return response()->json([
             'success' => true,
             'postulaciones' => $postulaciones
