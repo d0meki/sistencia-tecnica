@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PostulacionesController;
 use App\Http\Controllers\SolicitudesController;
 use App\Http\Controllers\TalleresMecanicosController;
 use App\Http\Controllers\TecnicosController;
@@ -42,3 +43,8 @@ Route::get('/tarea/{id}', [TecnicosController::class, 'tareaTecnico']);
 
 Route::post('/terminar-solicitud', [SolicitudesController::class, 'terminarSolicitud']);
 Route::post('/actualizar-posicion', [TecnicosController::class, 'actualizarPosicion']);
+
+Route::get('/all-postulaciones', [PostulacionesController::class, 'postulaciones']);
+
+
+

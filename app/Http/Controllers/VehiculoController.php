@@ -34,7 +34,7 @@ class VehiculoController extends Controller
 
     //===================utils
     public function allVehiculos(){
-        $vehiculos = Vehiculo::all();
+        $vehiculos = Vehiculo::with('user')->get();
         return view('vehiculos.index', compact('vehiculos'));
     }
 }

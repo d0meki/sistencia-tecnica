@@ -48,7 +48,7 @@
                                     <td>{{$vehiculo->placa}}</td>
                                     <td>{{$vehiculo->color}}</td>
                                     <td>{{$vehiculo->foto}}</td>
-                                    <td>{{$vehiculo->user_id}}</td>
+                                    <td>{{$vehiculo->user->nombre}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

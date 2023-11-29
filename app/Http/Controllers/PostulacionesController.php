@@ -23,6 +23,13 @@ class PostulacionesController extends Controller
             'success' => true,
         ], 200);
     }
+    public function postulaciones(){
+        $postulaciones = Postulaciones::all();
+        return response()->json([
+            'success' => true,
+            'postulaciones' => $postulaciones
+        ], 200);
+    }
     //================web
     public function postuacion($id){
         $solicitud_id = $id;

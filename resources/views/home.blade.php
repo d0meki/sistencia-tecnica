@@ -28,11 +28,8 @@
                         </p>
                         <div class="user-button">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <a type="button" href="{{route('tecnicos.index')}}"  class="btn btn-primary btn-sm btn-block"><i class="fa fa-wrench"></i> Mis Tecnicos</a>
-                                </div>
-                                <div class="col-md-6">
-                                    <button type="button" class="btn btn-default btn-sm btn-block"><i class="fa fa-coffee"></i> Buy a coffee</button>
                                 </div>
                             </div>
                         </div>
